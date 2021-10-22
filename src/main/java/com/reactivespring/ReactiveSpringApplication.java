@@ -12,12 +12,6 @@ import java.util.stream.Stream;
 public class ReactiveSpringApplication {
 
     public static void main(String[] args) {
-        //Stream, filter
-        List<String> list = Stream.of("abcd", "def", "rst").collect(Collectors.toList())
-                .stream().filter(e -> e.contains("d")).collect(Collectors.toList());
-        //forEach, Lambda
-        list.stream().forEach(e -> System.out.println(e.toUpperCase()));
-
         SpringApplication.run(ReactiveSpringApplication.class, args);
     }
 
