@@ -14,7 +14,7 @@ public class UserController {
     UserService userService;
 
     @GetMapping(path = "/allUser")
-    public List<User> allUser() {
+    public List<User> allUser() throws InterruptedException {
         return userService.getAllUser();
     }
 }
