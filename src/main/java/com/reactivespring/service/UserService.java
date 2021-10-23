@@ -7,9 +7,7 @@ import reactor.core.publisher.Flux;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 @Service
 public class UserService {
@@ -35,6 +33,12 @@ public class UserService {
     }
 
     public Flux<User> getAllUserStream() {
+        return Flux.range(1, 50)
+                .delayElements(Duration.ofSeconds(1))
+                .map(i -> new User(i, "sohan" + i, "sohan" + i + "@email.com"));
+    }
+
+    public Flux<User> getAllUserStreamRouter() {
         return Flux.range(1, 50)
                 .delayElements(Duration.ofSeconds(1))
                 .map(i -> new User(i, "sohan" + i, "sohan" + i + "@email.com"));
