@@ -40,7 +40,6 @@ public class UserService {
 
     public Flux<User> getAllUserStreamRouter() {
         return Flux.range(1, 50)
-                .delayElements(Duration.ofSeconds(1))
                 .map(i -> new User(i, "sohan" + i, "sohan" + i + "@email.com"));
     }
 }
