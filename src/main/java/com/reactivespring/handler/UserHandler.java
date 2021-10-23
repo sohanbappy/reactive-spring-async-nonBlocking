@@ -22,4 +22,19 @@ public class UserHandler {
                 .contentType(MediaType.TEXT_EVENT_STREAM)
                 .body(allUserStreamRouter, User.class);
     }
+
+    public Mono<ServerResponse> getUserById(ServerRequest request) {
+        int id = Integer.parseInt(request.pathVariable("id"));
+        Mono<User> user = userService.getAllUserStreamRouter().filter(u -> u.getId() == id).next();
+        return ServerResponse.ok()
+                .body(user, User.class);
+    }
+
+    public Mono<ServerResponse> saveUser(ServerRequest request) {
+        Mono<User> user = request.bodyToMono(User.class);
+        Mono<String> response = user.map(u -> u.getId() + " : " + u.getName());
+        return ServerResponse.ok()
+                .body(response, String.class);
+    }
+
 }

@@ -19,6 +19,8 @@ public class RouterConfig {
     public RouterFunction<ServerResponse> config() {
         return RouterFunctions.route()
                 .GET("/router/userList", handler::getUsers)
+                .GET("/router/user/{id}", handler::getUserById)
+                .POST("/router/user/save", handler::saveUser)
                 .build();
     }
 }
