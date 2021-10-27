@@ -27,6 +27,6 @@ public class MongoUser {
     private String phone;
     @Field("mail")
     private String email;
-    @DBRef
-    private List<MongoUserRole> roles;
+//    @DBRef
+//    private List<MongoUserRole> roles;
 }
