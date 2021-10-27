@@ -38,10 +38,6 @@ public class MongoUserService {
                         .doOnNext(e ->
                                 {
                                     e.setId(id);
-                                    e.setUserId(u.getUserId());
-                                    e.setName(u.getName());
-                                    e.setPhone(u.getPhone());
-                                    e.setEmail(u.getEmail());
                                 }
                         ))
                 .flatMap(userRepo::save);
