@@ -25,3 +25,15 @@ https://github.com/jasync-sql/jasync-sql
 
 https://github.com/mirromutth/r2dbc-mysql
 
+### Dummy Input (MongoUser)
+```
+[
+  {
+    "id": "6179b0175c7dcd208c5a8312",
+    "userId": 2,
+    "name": "sohanUpdated",
+    "phone": "1234",
+    "email": "sohan@"
+  }
+]
+```
