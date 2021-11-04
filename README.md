@@ -1,6 +1,9 @@
 # reactive-spring-async-nonBlocking   (Web-Flux, Mongo)
 Try to develop Spring Reactive Application [Project Reactor](https://projectreactor.io/)
 
+### Showing something instead of waiting the client is a cool thing
+* Taking too long to process the whole data?? No worries, just show whatever is processed; may be 10% or 20% .
+
 ## Mono, Flux
 
 ###### Advantages
